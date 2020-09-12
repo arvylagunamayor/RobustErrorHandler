@@ -19,7 +19,6 @@
     <ItemGroup>
         <ProjectReference Include="..\CodingMilitia.PlayBall.GroupManagement.Domain\CodingMilitia.PlayBall.GroupManagement.Domain.csproj" />
         <ProjectReference Include="..\CodingMilitia.PlayBall.GroupManagement.Infrastructure\CodingMilitia.PlayBall.GroupManagement.Infrastructure.csproj" />
-        <ProjectReference Include="..\CodingMilitia.PlayBall.Shared.StartupTasks\CodingMilitia.PlayBall.Shared.StartupTasks.csproj" />
     </ItemGroup>
 
     <ItemGroup>

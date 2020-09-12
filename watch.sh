@@ -1,1 +1,0 @@
-dotnet watch --project ./src/CodingMilitia.PlayBall.GroupManagement.Web run --environment Development --urls http://localhost:5002
