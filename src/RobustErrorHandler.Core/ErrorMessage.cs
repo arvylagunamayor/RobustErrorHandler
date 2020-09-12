@@ -26,7 +26,7 @@ namespace RobustErrorHandler.Core
 {
     public interface IErrorMessage
     {
-        public string Code { get; }
+        public string ErrorCode { get; }
 
         public string Description { get; }
     }
@@ -39,7 +39,7 @@ namespace RobustErrorHandler.Core
             this.Description = errorString;
         }
 
-        public string Code => "default";
+        public string ErrorCode => "default";
 
         public string Description { get; }
     }
