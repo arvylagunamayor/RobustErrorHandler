@@ -3,6 +3,13 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>RobustErrorHandler</PackageId>
+    <Title>Robust Error Handler</Title>
+    <PackageDescription>Fork from https://github.com/AspNetCoreFromZeroToOverkill/GroupManagement, made some clean up to make the module reusable to different project without referencing the whole project </PackageDescription>
+    <Version>1.0.0</Version>
+    <Authors>Arvy L. Mayor</Authors>
+    <Company>IT-ERA TECHNOLOGY SOLUTIONS</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
