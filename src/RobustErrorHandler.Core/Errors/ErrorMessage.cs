@@ -39,7 +39,7 @@ namespace RobustErrorHandler.Core
             this.Description = errorString;
         }
 
-        public string ErrorCode => "default";
+        public string ErrorCode => "error";
 
         public string Description { get; }
     }

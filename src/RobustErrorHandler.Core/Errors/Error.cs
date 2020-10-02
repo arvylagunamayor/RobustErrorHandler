@@ -66,9 +66,7 @@ namespace RobustErrorHandler.Core.Errors
             TVisitResult Visit(PreConditionRequired result);
             TVisitResult Visit(TooManyRequest result);
             TVisitResult Visit(RequestHeaderFieldsTooLarge result);
-            TVisitResult Visit(ConnectionClosedWithoutResponse result);
             TVisitResult Visit(UnavailableForLegalReasons result);
-            TVisitResult Visit(ClientClosedRequest result);
 
             #endregion
 

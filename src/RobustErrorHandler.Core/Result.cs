@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 using RobustErrorHandler.Core.Errors;
+using RobustErrorHandler.Core.SuccessCollection;
 
 namespace RobustErrorHandler.Core
 {
@@ -31,74 +32,74 @@ namespace RobustErrorHandler.Core
     {
         #region HTTP 1xx INFORMATIONAL
 
-        public static Either<Error, TValue> Continue<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> Continue<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Continue(value));
 
-        public static Either<Error, TValue> SwitchingProtocols<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> SwitchingProtocols<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.SwitchingProtocols(value));
 
-        public static Either<Error, TValue> Processing<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> Processing<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Processing(value));
 
         #endregion
 
         #region HTTP 2xx SUCCESS
-        public static Either<Error, TValue> Success<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> Success<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Ok(value));
 
-        public static Either<Error, TValue> Created<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> Created<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Created(value));
 
-        public static Either<Error, TValue> Accepted<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> Accepted<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Accepted(value));
 
-        public static Either<Error, TValue> NonAuthoritativeInformation<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> NonAuthoritativeInformation<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.NonAuthoritativeInformation(value));
 
-        public static Either<Error, TValue> NoContent<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> NoContent<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.NoContent(value));
 
-        public static Either<Error, TValue> ResetContent<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> ResetContent<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.ResetContent(value));
 
-        public static Either<Error, TValue> PartialContent<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> PartialContent<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.PartialContent(value));
 
-        public static Either<Error, TValue> MultiStatus<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> MultiStatus<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.MultiStatus(value));
 
-        public static Either<Error, TValue> AlreadyReported<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> AlreadyReported<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.AlreadyReported(value));
 
-        public static Either<Error, TValue> ImUsed<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> ImUsed<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.ImUsed(value));
 
         #endregion
 
         #region HTTP 3xx REDIRECTION
-        public static Either<Error, TValue> MutipleChoices<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> MutipleChoices<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.MutipleChoices(value));
 
-        public static Either<Error, TValue> MovedPermanently<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> MovedPermanently<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.MovedPermanently(value));
 
-        public static Either<Error, TValue> Found<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> Found<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Found(value));
 
-        public static Either<Error, TValue> SeeOther<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> SeeOther<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.SeeOther(value));
 
-        public static Either<Error, TValue> NotModified<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> NotModified<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.NotModified(value));
 
-        public static Either<Error, TValue> UseProxy<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> UseProxy<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.UseProxy(value));
 
-        public static Either<Error, TValue> TemporaryRedirect<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> TemporaryRedirect<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.TemporaryRedirect(value));
 
-        public static Either<Error, TValue> PermanentRedirect<TValue>(TValue value)
-            => Either.Right<Error, TValue>(value);
+        public static Either<Error, Success<TValue>> PermanentRedirect<TValue>(TValue value)
+            => Either.Right<Error, Success<TValue>>(new Success<TValue>.PermanentRedirect(value));
 
         #endregion
 
@@ -185,14 +186,9 @@ namespace RobustErrorHandler.Core
         public static Either<Error, TValue> RequestHeaderFieldsTooLarge<TValue>(IErrorMessage message)
             => Either.Left<Error, TValue>(new Error.RequestHeaderFieldsTooLarge(message));
 
-        public static Either<Error, TValue> ConnectionClosedWithoutResponse<TValue>(IErrorMessage message)
-            => Either.Left<Error, TValue>(new Error.ConnectionClosedWithoutResponse(message));
-
         public static Either<Error, TValue> UnavailableForLegalReasons<TValue>(IErrorMessage message)
             => Either.Left<Error, TValue>(new Error.UnavailableForLegalReasons(message));
 
-        public static Either<Error, TValue> ClientClosedRequest<TValue>(IErrorMessage message)
-            => Either.Left<Error, TValue>(new Error.ClientClosedRequest(message));
         #endregion
 
         #region HTTP 5xx ERRORS

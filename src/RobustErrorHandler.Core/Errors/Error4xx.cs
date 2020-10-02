@@ -441,22 +441,6 @@ namespace RobustErrorHandler.Core.Errors
                 => visitor.Visit(this);
         }
 
-        public sealed class ConnectionClosedWithoutResponse : Error
-        {
-            public ConnectionClosedWithoutResponse(IErrorMessage message)
-            {
-                Message = message;
-            }
-
-            public ConnectionClosedWithoutResponse(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
         public sealed class UnavailableForLegalReasons : Error
         {
             public UnavailableForLegalReasons(IErrorMessage message)
@@ -465,22 +449,6 @@ namespace RobustErrorHandler.Core.Errors
             }
 
             public UnavailableForLegalReasons(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
-        public sealed class ClientClosedRequest : Error
-        {
-            public ClientClosedRequest(IErrorMessage message)
-            {
-                Message = message;
-            }
-
-            public ClientClosedRequest(string errorMessage)
             {
                 Message = new DefaultMessage(errorMessage);
             }
