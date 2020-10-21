@@ -22,9 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-using RobustErrorHandler.Core.Errors;
-using RobustErrorHandler.Core.SuccessCollection;
-
 namespace RobustErrorHandler.Core
 {
     //NOTE: HTTP Resources details from https://httpstatuses.com/
@@ -32,19 +29,22 @@ namespace RobustErrorHandler.Core
     {
         #region HTTP 1xx INFORMATIONAL
 
-        public static Either<Error, Success<TValue>> Continue<TValue>(TValue value)
-            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Continue(value));
+        public static Either<Error, TValue> Continue<TValue>(TValue value)
+            => Either.Right<Error, TValue>(value);
 
-        public static Either<Error, Success<TValue>> SwitchingProtocols<TValue>(TValue value)
-            => Either.Right<Error, Success<TValue>>(new Success<TValue>.SwitchingProtocols(value));
+        public static Either<Error, TValue> SwitchingProtocols<TValue>(TValue value)
+            => Either.Right<Error, TValue>(value);
 
-        public static Either<Error, Success<TValue>> Processing<TValue>(TValue value)
-            => Either.Right<Error, Success<TValue>>(new Success<TValue>.Processing(value));
+        public static Either<Error, TValue> Processing<TValue>(TValue value)
+            => Either.Right<Error, TValue>(value);
 
         #endregion
 
         #region HTTP 2xx SUCCESS
-        public static Either<Error, Success<TValue>> Success<TValue>(TValue value)
+        public static Either<Error, TValue> Success<TValue>(TValue value)
+            => Either.Right<Error, TValue>(value);
+
+        public static Either<Error, Success<TValue>> Ok<TValue>(TValue value)
             => Either.Right<Error, Success<TValue>>(new Success<TValue>.Ok(value));
 
         public static Either<Error, Success<TValue>> Created<TValue>(TValue value)

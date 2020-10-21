@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RobustErrorHandler.Core.SuccessCollection
+﻿namespace RobustErrorHandler.Core
 {
-    public abstract partial class Success<TValue>
+    public abstract partial class Success<T>
     {
-        public TValue Value { get; private set; }
+        public T Value { get; private set; }
 
-        private Success() { }
+        private Success(T value) { this.Value = value; }
 
         public abstract TResult Accept<TVisitor, TResult>(TVisitor visitor)
             where TVisitor : ISucessVisitor<TResult>;
@@ -63,111 +59,81 @@ namespace RobustErrorHandler.Core.SuccessCollection
 
         }
 
-        public sealed class Ok : Success<TValue>
+        public sealed class Ok : Success<T>
         {
-            public Ok(TValue value)
-            {
-                this.Value = value;
-            }
+            public Ok(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class Created : Success<TValue>
+        public sealed class Created : Success<T>
         {
-            public Created(TValue value)
-            {
-                this.Value = value;
-            }
+            public Created(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class Accepted : Success<TValue>
+        public sealed class Accepted : Success<T>
         {
-            public Accepted(TValue value)
-            {
-                this.Value = value;
-            }
+            public Accepted(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class NonAuthoritativeInformation : Success<TValue>
+        public sealed class NonAuthoritativeInformation : Success<T>
         {
-            public NonAuthoritativeInformation(TValue value)
-            {
-                this.Value = value;
-            }
+            public NonAuthoritativeInformation(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class NoContent : Success<TValue>
+        public sealed class NoContent : Success<T>
         {
-            public NoContent(TValue value)
-            {
-                this.Value = value;
-            }
+            public NoContent(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class ResetContent : Success<TValue>
+        public sealed class ResetContent : Success<T>
         {
-            public ResetContent(TValue value)
-            {
-                this.Value = value;
-            }
+            public ResetContent(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class PartialContent : Success<TValue>
+        public sealed class PartialContent : Success<T>
         {
-            public PartialContent(TValue value)
-            {
-                this.Value = value;
-            }
+            public PartialContent(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class MultiStatus : Success<TValue>
+        public sealed class MultiStatus : Success<T>
         {
-            public MultiStatus(TValue value)
-            {
-                this.Value = value;
-            }
+            public MultiStatus(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class AlreadyReported : Success<TValue>
+        public sealed class AlreadyReported : Success<T>
         {
-            public AlreadyReported(TValue value)
-            {
-                this.Value = value;
-            }
+            public AlreadyReported(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class ImUsed : Success<TValue>
+        public sealed class ImUsed : Success<T>
         {
-            public ImUsed(TValue value)
-            {
-                this.Value = value;
-            }
+            public ImUsed(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);

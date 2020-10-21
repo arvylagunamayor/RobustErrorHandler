@@ -1,98 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RobustErrorHandler.Core.SuccessCollection
+﻿namespace RobustErrorHandler.Core
 {
-    public abstract partial class Success<TValue>
+    public abstract partial class Success<T>
     {
 
-        public sealed class MutipleChoices : Success<TValue>
+        public sealed class MutipleChoices : Success<T>
         {
-            public MutipleChoices(TValue value)
-            {
-                this.Value = value;
-            }
+            public MutipleChoices(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class MovedPermanently : Success<TValue>
+        public sealed class MovedPermanently : Success<T>
         {
-            public MovedPermanently(TValue value)
-            {
-                this.Value = value;
-            }
+            public MovedPermanently(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class Found : Success<TValue>
+        public sealed class Found : Success<T>
         {
-            public Found(TValue value)
-            {
-                this.Value = value;
-            }
+            public Found(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class SeeOther: Success<TValue>
+        public sealed class SeeOther: Success<T>
         {
-            public SeeOther(TValue value)
-            {
-                this.Value = value;
-            }
+            public SeeOther(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class NotModified : Success<TValue>
+        public sealed class NotModified : Success<T>
         {
-            public NotModified(TValue value)
-            {
-                this.Value = value;
-            }
+            public NotModified(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class UseProxy : Success<TValue>
+        public sealed class UseProxy : Success<T>
         {
-            public UseProxy(TValue value)
-            {
-                this.Value = value;
-            }
+            public UseProxy(T value) : base(value) { }
 
 
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
+        public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class TemporaryRedirect : Success<TValue>
+        public sealed class TemporaryRedirect : Success<T>
         {
-            public TemporaryRedirect(TValue value)
-            {
-                this.Value = value;
-            }
+            public TemporaryRedirect(T value) : base(value) { }
 
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
+        public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class PermanentRedirect : Success<TValue>
+        public sealed class PermanentRedirect : Success<T>
         {
-            public PermanentRedirect(TValue value)
-            {
-                this.Value = value;
-            }
+            public PermanentRedirect(T value) : base(value) { }
 
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
+        public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
     }

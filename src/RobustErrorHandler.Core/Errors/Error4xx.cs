@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RobustErrorHandler.Core.Errors
+﻿namespace RobustErrorHandler.Core
 {
     //NOTE: HTTP Resources details from https://httpstatuses.com/
     public abstract partial class Error

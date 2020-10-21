@@ -1,39 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RobustErrorHandler.Core.SuccessCollection
+﻿namespace RobustErrorHandler.Core
 {
-    public abstract partial class Success<TValue>
+    public abstract partial class Success<T>
     {
-        public sealed class Continue : Success<TValue>
+        public sealed class Continue : Success<T>
         {
-            public Continue(TValue value)
-            {
-                this.Value = value;
-            }
+            public Continue(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class SwitchingProtocols : Success<TValue>
+        public sealed class SwitchingProtocols : Success<T>
         {
-            public SwitchingProtocols(TValue value)
-            {
-                this.Value = value;
-            }
+            public SwitchingProtocols(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);
         }
 
-        public sealed class Processing : Success<TValue>
+        public sealed class Processing : Success<T>
         {
-            public Processing(TValue value)
-            {
-                this.Value = value;
-            }
+            public Processing(T value) : base(value) { }
 
             public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
                 => visitor.Visit(this);

@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-namespace RobustErrorHandler.Core.Errors
+namespace RobustErrorHandler.Core
 {
     //NOTE: HTTP Resources details from https://httpstatuses.com/
     public abstract partial class Error
