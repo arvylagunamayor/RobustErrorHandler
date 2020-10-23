@@ -7,14 +7,14 @@
     <Title>Robust Error Handler</Title>
     <RepositoryUrl>https://github.com/arvylagunamayor/RobustErrorHandler</RepositoryUrl>
     <PackageDescription>Fork from https://github.com/AspNetCoreFromZeroToOverkill/GroupManagement, made some clean up to make the module reusable to different project without referencing the whole project </PackageDescription>
-    <Version>1.2.1</Version>
+    <Version>1.2.2</Version>
     <Authors>Arvy L. Mayor</Authors>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/arvylagunamayor/RobustErrorHandler</PackageProjectUrl>
     <PackageReleaseNotes>* Added more http statuses</PackageReleaseNotes>
-    <AssemblyVersion>1.2.1</AssemblyVersion>
-    <FileVersion>1.2.1</FileVersion>
+    <AssemblyVersion>1.2.2</AssemblyVersion>
+    <FileVersion>1.2.2</FileVersion>
     <Description>This project was derive from https://blog.codingmilitia.com/2020/03/02/aspnet-038-from-zero-to-overkill-more-explicit-error-handling-with-either/</Description>
   </PropertyGroup>
 
