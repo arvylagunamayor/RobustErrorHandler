@@ -2,19 +2,22 @@
 
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>RobustErrorHandler</PackageId>
     <Title>Robust Error Handler</Title>
     <RepositoryUrl>https://github.com/arvylagunamayor/RobustErrorHandler</RepositoryUrl>
     <PackageDescription>Fork from https://github.com/AspNetCoreFromZeroToOverkill/GroupManagement, made some clean up to make the module reusable to different project without referencing the whole project </PackageDescription>
-    <Version>1.2.2</Version>
+    <Version>1.3.1</Version>
     <Authors>Arvy L. Mayor</Authors>
     <Company></Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/arvylagunamayor/RobustErrorHandler</PackageProjectUrl>
-    <PackageReleaseNotes>* Added more http statuses</PackageReleaseNotes>
-    <AssemblyVersion>1.2.2</AssemblyVersion>
-    <FileVersion>1.2.2</FileVersion>
+    <PackageReleaseNotes>* Updated framework for .Net Standard 2.1
+* Remove uncommon httpstatuses
+* Added Error overload with string param
+* Fix, string message error overload (This will use the DefaultMessage) class</PackageReleaseNotes>
+    <AssemblyVersion>1.3.1</AssemblyVersion>
+    <FileVersion>1.3.1</FileVersion>
     <Description>This project was derive from https://blog.codingmilitia.com/2020/03/02/aspnet-038-from-zero-to-overkill-more-explicit-error-handling-with-either/</Description>
   </PropertyGroup>
 

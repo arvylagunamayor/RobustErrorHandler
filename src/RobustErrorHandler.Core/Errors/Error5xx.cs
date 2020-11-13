@@ -19,20 +19,6 @@
                 => visitor.Visit(this);
         }
 
-        public sealed class NotImplemented : Error
-        {
-            public NotImplemented(IErrorMessage message)
-            {
-                Message = message;
-            }
-            public NotImplemented(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
 
         public sealed class BadGateway : Error
         {
@@ -86,81 +72,6 @@
                 Message = message;
             }
             public HttpVersionNotSupported(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
-        public sealed class VariantAlsoNegotiates : Error
-        {
-            public VariantAlsoNegotiates(IErrorMessage message)
-            {
-                Message = message;
-            }
-            public VariantAlsoNegotiates(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
-        public sealed class InsufficientStorage : Error
-        {
-            public InsufficientStorage(IErrorMessage message)
-            {
-                Message = message;
-            }
-            public InsufficientStorage(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
-        public sealed class LoopDetected : Error
-        {
-            public LoopDetected(IErrorMessage message)
-            {
-                Message = message;
-            }
-            public LoopDetected(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
-        public sealed class NotExtended : Error
-        {
-            public NotExtended(IErrorMessage message)
-            {
-                Message = message;
-            }
-            public NotExtended(string errorMessage)
-            {
-                Message = new DefaultMessage(errorMessage);
-            }
-
-            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
-                => visitor.Visit(this);
-        }
-
-        public sealed class NetworkAuthenticationRequired : Error
-        {
-            public NetworkAuthenticationRequired(IErrorMessage message)
-            {
-                Message = message;
-            }
-            public NetworkAuthenticationRequired(string errorMessage)
             {
                 Message = new DefaultMessage(errorMessage);
             }

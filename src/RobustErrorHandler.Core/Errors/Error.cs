@@ -41,47 +41,17 @@ namespace RobustErrorHandler.Core
             // Error 400 BadRequest
             TVisitResult Visit(Invalid result);
             TVisitResult Visit(Unauthorized result);
-            TVisitResult Visit(PaymentRequired result);
             TVisitResult Visit(Forbidden result);
             TVisitResult Visit(NotFound result);
-            TVisitResult Visit(MethodNotAllowed result);
-            TVisitResult Visit(NotAcceptable result);
-            TVisitResult Visit(ProxyAuthenticationRequired result);
-            TVisitResult Visit(RequestTimeOut result);
-            TVisitResult Visit(Conflict result);
-            TVisitResult Visit(Gone result);
-            TVisitResult Visit(LengthRequired result);
-            TVisitResult Visit(PreConditionFailed result);
-            TVisitResult Visit(PayloadTooLarge result);
-            TVisitResult Visit(RequestURITooLong result);
-            TVisitResult Visit(UnsupportedMediaType result);
-            TVisitResult Visit(RequestedRangeNotSatisfiable result);
-            TVisitResult Visit(ExpectationFailed result);
-            TVisitResult Visit(ImATeaPot result);
-            TVisitResult Visit(MisdirectedRequest result);
-            TVisitResult Visit(UnProcessableEntity result);
-            TVisitResult Visit(Locked result);
-            TVisitResult Visit(FailedDependency result);
-            TVisitResult Visit(UpgradeRequired result);
-            TVisitResult Visit(PreConditionRequired result);
-            TVisitResult Visit(TooManyRequest result);
-            TVisitResult Visit(RequestHeaderFieldsTooLarge result);
-            TVisitResult Visit(UnavailableForLegalReasons result);
 
             #endregion
 
             #region HTTPSTATUS 5XX ERRORS
             TVisitResult Visit(InternalServerError result);
-            TVisitResult Visit(NotImplemented result);
             TVisitResult Visit(BadGateway result);
             TVisitResult Visit(ServiceUnavailable result);
             TVisitResult Visit(GatewayTimeout result);
             TVisitResult Visit(HttpVersionNotSupported result);
-            TVisitResult Visit(VariantAlsoNegotiates result);
-            TVisitResult Visit(InsufficientStorage result);
-            TVisitResult Visit(LoopDetected result);
-            TVisitResult Visit(NotExtended result);
-            TVisitResult Visit(NetworkAuthenticationRequired result);
             TVisitResult Visit(NetworkConnectionTimeoutError result);
 
 
