@@ -52,6 +52,22 @@
                 => visitor.Visit(this);
         }
 
+        public sealed class Conflict : Error
+        {
+            public Conflict(IErrorMessage message)
+            {
+                Message = message;
+            }
+
+            public Conflict(string errorMessage)
+            {
+                Message = new DefaultMessage(errorMessage);
+            }
+
+            public override TResult Accept<TVisitor, TResult>(TVisitor visitor)
+                => visitor.Visit(this);
+        }
+
         // Error 404 Not Found
         public sealed class NotFound : Error
         {

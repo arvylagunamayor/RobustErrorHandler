@@ -64,10 +64,14 @@ namespace RobustErrorHandler.Core
             => Either.Left<Error, TValue>(new Error.Forbidden(new DefaultMessage(message)));
 
         public static Either<Error, TValue> NotFound<TValue>(IErrorMessage message)
-            => Either.Left<Error, TValue>(new Error.NotFound(message));
-
+            => Either.Left<Error, TValue>(new Error.NotFound(message)); 
         public static Either<Error, TValue> NotFound<TValue>(string message)
             => Either.Left<Error, TValue>(new Error.NotFound(new DefaultMessage(message)));
+
+        public static Either<Error, TValue> Conflict<TValue>(IErrorMessage message)
+            => Either.Left<Error, TValue>(new Error.Conflict(message));
+        public static Either<Error, TValue> Conflict<TValue>(string message)
+            => Either.Left<Error, TValue>(new Error.Conflict(new DefaultMessage(message)));
 
         #endregion
 

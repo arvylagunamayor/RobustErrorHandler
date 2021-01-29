@@ -43,6 +43,7 @@ namespace RobustErrorHandler.Core
             TVisitResult Visit(Unauthorized result);
             TVisitResult Visit(Forbidden result);
             TVisitResult Visit(NotFound result);
+            TVisitResult Visit(Conflict result);
 
             #endregion
 
